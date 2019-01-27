@@ -1,10 +1,10 @@
-package normalRequest
+package ShowApiSdk
 
 import (
 	"strings"
 	"net/url"
 	"time"
-	"showSdk/httplib"
+	"github.com/xhaoxiong/ShowApiSdk/httplib"
 	"strconv"
 	"encoding/json"
 	"io/ioutil"
@@ -51,7 +51,6 @@ func (request *NormalReq) SetReadTimeOut(readTimeOut time.Duration) {
 func (request *NormalReq) SetConnectTimeOut(connectTimeOut time.Duration) {
 	request.connectTimeOut = connectTimeOut
 }
-
 
 //get请求
 func (request *NormalReq) Get() (string, error) {
