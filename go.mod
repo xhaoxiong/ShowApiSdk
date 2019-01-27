@@ -1,1 +1,1 @@
-module ShowApiSdk
+module github.com/xhaoxiong/ShowApiSdk
