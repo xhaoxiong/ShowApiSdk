@@ -29,7 +29,7 @@
 //	fmt.Println(str)
 //
 //  more docs http://beego.me/docs/module/httplib.md
-package ShowApiSdk
+package httplib
 
 import (
 	"bytes"
@@ -317,6 +317,7 @@ func (b *BeegoHTTPRequest) Body(data interface{}) *BeegoHTTPRequest {
 	}
 	return b
 }
+
 // XMLBody adds request raw body encoding by XML.
 func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error) {
 	if b.req.Body == nil && obj != nil {
@@ -330,6 +331,7 @@ func (b *BeegoHTTPRequest) XMLBody(obj interface{}) (*BeegoHTTPRequest, error) {
 	}
 	return b, nil
 }
+
 // JSONBody adds request raw body encoding by JSON.
 func (b *BeegoHTTPRequest) JSONBody(obj interface{}) (*BeegoHTTPRequest, error) {
 	if b.req.Body == nil && obj != nil {
@@ -425,7 +427,7 @@ func (b *BeegoHTTPRequest) DoRequest() (resp *http.Response, err error) {
 			}
 		}
 		paramBody = buf.String()
-		paramBody = paramBody[0 : len(paramBody)-1]
+		paramBody = paramBody[0: len(paramBody)-1]
 	}
 
 	b.buildURL(paramBody)

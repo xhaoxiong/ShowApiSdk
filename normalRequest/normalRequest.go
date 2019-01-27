@@ -1,4 +1,4 @@
-package ShowApiSdk
+package normalRequest
 
 import (
 	"strings"
